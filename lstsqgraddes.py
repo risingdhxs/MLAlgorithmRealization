@@ -1,6 +1,7 @@
 def lstsqgraddes(A,b,x0,nmax):
     import numpy as np
-    alpha=0.001
+    alpha=0.00015
+    print('Alpha is ' + str(alpha))
 #     Storing historical Error and solutions, up to 3
     E=np.zeros([3,1])
     (n,m)=A.shape
@@ -35,7 +36,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-p=50000
+p=400000
 x1=np.random.rand(p,1)
 x2=np.random.rand(p,1)
 e=np.random.rand(p,1)-0.5
@@ -66,6 +67,7 @@ print(np.column_stack(([1.2,2.3,1.75],wls,wgd,wne)))
 print('linalg Least Square Time is '+str(t_ls))
 print('Gradient Descent Time is '+str(t_gd))
 print('Normal Equation Time is '+str(t_ne))
+
 
 # fig = plt.figure()
 # ax1 = fig.add_subplot(111)
